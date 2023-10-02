@@ -618,6 +618,7 @@ header nav ul {
   min-height: 100vh;
   padding-bottom: 90px;
   padding-top: 54px;
+  clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 30% 98%, 0px 100%);
 }
 
 .contact-container {
@@ -684,4 +685,41 @@ textarea:focus {
   color: white;
   font-weight: 600;
   border-radius: 12px;
+}
+
+footer {
+  /* min-height: 6rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-bg3-color);
+}
+
+.footer {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--primary-bg-2-color);
+  color: var(--text-color1);
+}
+
+.footer-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.footer-icon a img {
+  width: 24px;
+  height: 24px;
 }

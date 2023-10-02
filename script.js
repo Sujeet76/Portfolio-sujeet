@@ -163,3 +163,43 @@ populate(skillData[0], skillSection);
 populate(skillData[1], skillSection);
 populate(skillData[2], skillSection);
 populate(skillData[3], skillSection);
+
+const initializeEmail = () => {
+  emailjs.init("Z0nxZr9lJnHc6ho75");
+};
+
+initializeEmail();
+
+window.onload = function () {
+  const contactFrom = document.getElementById("contact-form");
+  contactFrom.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const obj = {};
+    obj.firstName = e.target?.firstName.value;
+    obj.lastName = e.target?.lastName.value;
+    obj.email = e.target?.email.value;
+    obj.subject = e.target?.subject.value;
+    obj.message = e.target?.message.value;
+
+    const mailTemp = {
+      to_name: `${obj.firstName} ${obj.lastName}`,
+      user_email: obj.email,
+      subject: obj.subject,
+      message: obj.message,
+    };
+    emailjs
+      .send("service_9z4y2xw", "template_hy0qm7p", mailTemp)
+      .then(() => {
+        e.target.firstName.value = "";
+        e.target.lastName.value = "";
+        e.target.email.value = "";
+        e.target.subject.value = "";
+        e.target.message.value = "";
+        console.log("success");
+        alert("Your message has been sent!");
+      })
+      .catch((error) => {
+        console.log("FAILED...", error);
+      });
+  });
+};
