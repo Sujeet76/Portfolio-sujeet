@@ -24,6 +24,13 @@ window.onscroll = () => {
   header.classList.toggle("header-active", window.scrollY > 100);
 };
 
+// type animation
+const typed = new Typed("#typed", {
+  strings: ["Developer", "Designer"],
+  typeSpeed: 100,
+  loop: true,
+});
+
 const skillData = [
   {
     title: "Frontend",
@@ -164,16 +171,21 @@ populate(skillData[1], skillSection);
 populate(skillData[2], skillSection);
 populate(skillData[3], skillSection);
 
+// send mail
 const initializeEmail = () => {
   emailjs.init("Z0nxZr9lJnHc6ho75");
 };
 
 initializeEmail();
 
+const btn = document.getElementById("send-btn");
 window.onload = function () {
   const contactFrom = document.getElementById("contact-form");
   contactFrom.addEventListener("submit", (e) => {
     e.preventDefault();
+    btn.innerText = "🚀 Sending... 🚀";
+    btn.disabled = true;
+    btn.style.cursor = "not-allowed";
     const obj = {};
     obj.firstName = e.target?.firstName.value;
     obj.lastName = e.target?.lastName.value;
@@ -195,8 +207,13 @@ window.onload = function () {
         e.target.email.value = "";
         e.target.subject.value = "";
         e.target.message.value = "";
+        btn.innerText = "Mail send successfully";
+        btn.disabled = false;
+        setTimeout(() => {
+          btn.innerText = "Send";
+        }, 1000);
+        btn.style.cursor = "pointer";
         console.log("success");
-        alert("Your message has been sent!");
       })
       .catch((error) => {
         console.log("FAILED...", error);

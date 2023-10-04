@@ -9,6 +9,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
     ></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   </head>
 
   <body>
@@ -34,6 +35,7 @@
         </div>
       </nav>
     </header>
+
     <!-- home -->
     <section id="home">
       <div class="home-container">
@@ -41,7 +43,7 @@
           <div>Welcome to my Portfolio</div>
           <h1>
             Hi! I'm sujeet<br />
-            <span>Developer</span>
+            <span id="typed"></span>
           </h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
@@ -54,15 +56,23 @@
 
           <!-- social links -->
           <div class="home-social-link">
-            <a href="#"><img src="./assets2/img/nav-icon1.svg" alt="" /></a>
-            <a href="#"
+            <a
+              href="https://www.linkedin.com/in/sujeet-kumar-1961b4269/"
+              target="_blank"
+              ><img src="./assets2/img/nav-icon1.svg" alt=""
+            /></a>
+            <a href="https://github.com/Sujeet76" target="_blank"
               ><img src="./assets2/img/nav-icon2.svg" alt="" class="github"
             /></a>
-            <a href="#"><img src="./assets2/img/nav-icon3.svg" alt="" /></a>
+            <a
+              href="https://instagram.com/sujeet_kumar5745?igshid=OGQ5ZDc2ODk2ZA=="
+              target="_blank"
+              ><img src="./assets2/img/nav-icon3.svg" alt=""
+            /></a>
           </div>
 
           <!-- contact and download cv button -->
-          <div>
+          <div class="contact-cv">
             <a href="#contact">
               Let's Connect
               <img src="./assets2/img/arrowCircle.svg" alt="arrowCircle" />
@@ -75,22 +85,25 @@
         </div>
       </div>
     </section>
+
     <!-- About -->
     <section id="skill">
       <!-- heading -->
-      <div class="heading-container">
-        <h1 class="heading">Skills</h1>
-        <p class="subheading">
-          Here are some of my skills on which I have been working on for the
-          past 2 years.
-        </p>
-      </div>
-
-      <!-- main section -->
-      <div class="skill-section">
-        <!-- data using js -->
+      <div class="skill-container">
+        <div class="heading-container">
+          <h1 class="heading">Skills</h1>
+          <p class="subheading">
+            Here are some of my skills on which I have been working on for the
+            past 2 years.
+          </p>
+        </div>
+        <!-- main section -->
+        <div class="skill-section">
+          <!-- data using js -->
+        </div>
       </div>
     </section>
+
     <!-- Project -->
     <section id="project">
       <div class="project__container">
@@ -334,72 +347,87 @@
         </div>
       </div>
     </section>
+
     <!-- Contact -->
     <section id="contact">
-      <div class="heading-container">
-        <h1 class="heading">Contact</h1>
-        <p class="subheading">
-          Feel free to reach out to me for any questions or opportunities!
-        </p>
-      </div>
-      <div class="contact-container">
-        <div class="contact-left">
-          <img src="./assets2/img/contact-img.svg" alt="floating man" />
+      <div class="contact__container">
+        <div class="heading-container">
+          <h1 class="heading">Contact</h1>
+          <p class="subheading">
+            Feel free to reach out to me for any questions or opportunities!
+          </p>
         </div>
-        <div class="contact-right">
-          <!-- heading  -->
-          <!-- form -->
-          <form class="form" id="contact-form">
-            <div class="form-heading"><h4>Email Me 🚀</h4></div>
-            <div class="nameContainer">
+        <div class="contact-container">
+          <div class="contact-left">
+            <img src="./assets2/img/contact-img.svg" alt="floating man" />
+          </div>
+          <div class="contact-right">
+            <!-- heading  -->
+            <!-- form -->
+            <form class="form" id="contact-form">
+              <div class="form-heading"><h4>Email Me 🚀</h4></div>
+              <div class="nameContainer">
+                <input
+                  id="firstName"
+                  name="firstName"
+                  type="text"
+                  placeholder="Enter first name"
+                  required="true"
+                />
+                <input
+                  id="lastName"
+                  name="lastName"
+                  type="text"
+                  required="true"
+                  placeholder="Enter last name"
+                />
+              </div>
               <input
-                id="firstName"
-                name="firstName"
-                type="text"
-                placeholder="Enter first name"
+                id="email"
+                name="email"
+                type="email"
+                required="true"
+                placeholder="Enter email address"
               />
               <input
-                id="lastName"
-                name="lastName"
+                id="subject"
+                name="subject"
                 type="text"
-                placeholder="Enter last name"
+                required="true"
+                placeholder="Enter subject"
               />
-            </div>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Enter email address"
-            />
-            <input
-              id="subject"
-              name="subject"
-              type="text"
-              placeholder="Enter subject"
-            />
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Write something..."
-            ></textarea>
-            <button class="send__btn">Send</button>
-          </form>
+              <textarea
+                name="message"
+                id="message"
+                required="true"
+                placeholder="Write something..."
+              ></textarea>
+              <button class="send__btn" id="send-btn">Send</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- footer -->
     <footer>
       <div class="footer">
         <div>
           <h1 class="logo">Sujeet</h1>
           <div class="footer-icon">
-            <a href="#">
+            <a href="https://github.com/Sujeet76" target="_blank">
               <img src="./assets2/img/other-3.png" alt="" />
             </a>
-            <a href="#">
+            <a
+              href="https://www.linkedin.com/in/sujeet-kumar-1961b4269/"
+              target="_blank"
+            >
               <img src="./assets2/img/linkedin.png" alt="" />
             </a>
-            <a href="#">
+            <a
+              href="https://instagram.com/sujeet_kumar5745?igshid=OGQ5ZDc2ODk2ZA=="
+              target="_blank"
+            >
               <img src="./assets2/img/instagram.png" alt="" />
             </a>
           </div>
